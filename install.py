@@ -2,7 +2,7 @@ import subprocess
 import os
 
 
-user = input("Escribe tu usuario > ")
+user = os.system("echo $USER")
 
 # Install pacman apps
 
@@ -16,12 +16,18 @@ pacman_apps = ["cmake",
                "mpv",
                "nemo",
                "neovim",
+               "firefox",
                "pavucontrol",
                "peazip",
                "quickshell",
                "qt6-tools",
                "qt6-virtualkeyboard",
-               "wf-recorder",
+               "wf-clipboard",
+               "hyprlauncher",
+               "npm",
+               "unzip",
+               "layer-shell-qt",
+               "nlohmann-json"
                "wine",
                "xorg-xev",
                "zsh"]
@@ -48,7 +54,7 @@ subprocess.run(["mv", "./dots/config/*", "~/.config"])
 subprocess.run(["sudo", "mv", "./dots/dinamic", "/usr/share/sddm/themes/"])
 subprocess.run(["sudo", "chown", "-R", f"{user}:{user}", "/usr/share/sddm/themes/dinamic/Backgrounds/"])
 subprocess.run(["sudo", "touch", "/etc/sddm.conf"])
-theme = "[Theme]\nCurrent=maya\n"
+theme = "[Theme]\nCurrent=dinamic\n"
 subprocess.run(
     ["sudo", "tee", "/etc/sddm.conf"],
     input=theme,
@@ -57,5 +63,10 @@ subprocess.run(
 )
 
 os.system("chsh -s $(which zsh)")
+
+subprocess.run(["hyprpm", "update"])
+subprocess.run(["hyprpm", "add", "https://github.com/gfhdhytghd/HyprCapture"])
+subprocess.run(["hyprpm", "enable", "hyprcapture"])
+subprocess.run(["hyprpm", "reload"])
 
 print("Instalacion terminada se recomienda que reinicie el sistema")
