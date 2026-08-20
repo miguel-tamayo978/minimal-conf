@@ -47,7 +47,7 @@ yay_apps = ["python-pywal16"]
 subprocess.run(["yay", "-S"] + yay_apps)
 
 # move dots
-subprocess.run(["mv", "./dots/config/*", "~/.config"])
+subprocess.run(["mv", "--backup", "./dots/config/*", "~/.config"])
 
 # conf sddm dinamic theme
 
@@ -68,5 +68,10 @@ subprocess.run(["hyprpm", "update"])
 subprocess.run(["hyprpm", "add", "https://github.com/gfhdhytghd/HyprCapture"])
 subprocess.run(["hyprpm", "enable", "hyprcapture"])
 subprocess.run(["hyprpm", "reload"])
+
+# reload wall and colors
+
+subprocess.run(["mv", "--backup", "./dots/Images", "~/"])
+subprocess.run(["python3", "~/.config/apps/wallchange/wallchange.py", "-p", "01.jpg"])
 
 print("Instalacion terminada se recomienda que reinicie el sistema")
