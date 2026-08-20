@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=dinamic
+Description=dinamic-background
+Author=mk
+Type=sddm-theme
+Version=1.4
+ConfigFile=Themes/a.conf
+MainScript=Main.qml
+TranslationsDirectory=translations
+Theme-Id=dinamic
+Theme-API=2.0
+QtVersion=6
