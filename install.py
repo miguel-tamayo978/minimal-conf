@@ -32,7 +32,7 @@ subprocess.run(["sudo", "pacman", "-S"] + pacman_apps)
 
 #install yay
 subprocess.run(["git", "clone", "https://aur.archlinux.org/yay.git"])
-subprocess.run(["cd", "yay", "&&", "makepkg -si"])
+os.system("cd yay && makepkg -si")
 
 #install apps
 
