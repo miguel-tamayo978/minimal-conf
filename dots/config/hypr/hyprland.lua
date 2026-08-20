@@ -1,0 +1,7 @@
+require("configs/monitors")
+require("configs/init")
+require("configs/look")
+require("configs/input")
+require("configs/keybinds")
+require("configs/wrules")
+require("configs/plugins")

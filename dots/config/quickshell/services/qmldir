@@ -1,0 +1,5 @@
+module qs.services
+singleton Audio Audio.qml
+singleton Brightness Brightness.qml
+singleton Battery Battery.qml
+singleton Colors Colors.qml
