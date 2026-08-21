@@ -34,6 +34,7 @@ pacman_apps=(
   "wine"
   "xorg-xev"
   "zsh"
+  "nwg-look"
 )
 
 # Instalar aplicaciones con pacman
